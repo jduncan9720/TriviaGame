@@ -11,8 +11,30 @@
     <title>Trivia Game</title>
   </head>
   <body>
-    <h1>Timed Trivia!!</h1>
+    <div class="container-fluid text-center">
+      <h1>Timed Trivia!!</h1>
+      <div class="container border">
+            <div id="startDiv">
+              <div id = buttonDiv class = "text-center">
+                <button type = "button" class = "btn btn-info text-center" id = "startButton">Start</button>
+            </div>
+            </div>
+            <div hidden id = "gameHolder">
+              <h3>Time Remaining: <span id="timeRemaining"></span></h3>
+              <h3 id="question">A Question</h3>
+              <button type = "button" class = "btn btn-info text-center" id = "answer1">John</button><br>
+              <button type = "button" class = "btn btn-info text-center" id = "answer2">Jeff</button><br>
+              <button type = "button" class = "btn btn-info text-center" id = "answer3">Jake</button><br>
+              <button type = "button" class = "btn btn-info text-center" id = "answer4">Josh</button><br>
+            </div>
+          </div>
+      </iv>
+      
+    
+    
+    
 
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
