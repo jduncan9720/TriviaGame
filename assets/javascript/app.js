@@ -1,7 +1,9 @@
-
+//variables to store correct or incorrect
+var right = 0;
+var wrong = 0;
+var timeCounter; 
 //Create a variable to hold the time interval once the question begins
 var timeAmount=10; 
-var timeCounter = setInterval(timer, 1000);
 //Count will keep track of the index of the displayed questions
 var count = 0;
 //Create an array of question objects that hold your trivia questions
@@ -43,6 +45,7 @@ var questions = [{
 }];
 //Hide gameHolder div so only startButton shows
 $("#gameHolder").hide();
+$("#endGame").hide();
 //Create start button to initialize trivia game
 $("#startButton").click(function () {startGame()});
 //Create answer buttons and make them register clicks
@@ -52,6 +55,7 @@ $("#answer3").on("click", function () { buttonClick("option3") });
 $("#answer4").on("click", function () { buttonClick("option4") });
 //Start the gmae when this funcion is called
 function startGame() {
+    timeCounter = setInterval(timer, 1000); //starts timer
     //show gameHolder div on click
     $("#gameHolder").show();
     //hide startDiv div on click
@@ -63,7 +67,14 @@ function startGame() {
 function nextQuestion() {
     if(count > questions.length - 1){
         clearInterval(timeCounter);
-        alert("Game Over");
+        $("#endGame").show();
+        $("#gameHolder").hide();
+        if (right >= wrong){
+            $("#resultText").html("Great Job!!")
+        }
+        else (
+            $("#resultText").html("You Suck!!")
+        )
         //What else happens at game over
     }
     else{
@@ -90,11 +101,15 @@ function timer() {
 function buttonClick(button) {
     if(button == (questions[count])["answer"]){
         count++;
+        right++;
+        $("#amountCorrect").html(right);
         //either call correct() or just add stuff here to do. 
         nextQuestion();
     }
     else{
         count++;
+        wrong++;
+        $("#amountIncorrect").html(wrong);
         //either call incorrect() or just add stuff here to do. 
         nextQuestion();
     }
