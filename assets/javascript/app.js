@@ -3,7 +3,7 @@ var right = 0;
 var wrong = 0;
 var timeCounter; 
 //Create a variable to hold the time interval once the question begins
-var timeAmount=10; 
+var timeAmount=30; 
 //Count will keep track of the index of the displayed questions
 var count = 0;
 //Create an array of question objects that hold your trivia questions
@@ -92,9 +92,12 @@ function timer() {
     $("#timeRemaining").html(timeAmount);
     timeAmount--;
     if (timeAmount < -1) //if it is 0 it will not show 0 on countdown
-    {
+    {   
+        $("#questionResponse").html("Out of Time");
         count++;
-        nextQuestion();
+        wrong++;
+        setTimeout(nextQuestion, 1000);
+        //nextQuestion();
     }
 }
 //When buttons are clicked run this function
@@ -102,24 +105,17 @@ function buttonClick(button) {
     if(button == (questions[count])["answer"]){
         count++;
         right++;
+        $("#questionResponse").html("That is correct!");
         $("#amountCorrect").html(right);
-        //either call correct() or just add stuff here to do. 
-        nextQuestion();
+        setTimeout(nextQuestion, 1000);
+        //nextQuestion();
     }
     else{
         count++;
         wrong++;
+        $("#questionResponse").html("That is incorrect!");
         $("#amountIncorrect").html(wrong);
-        //either call incorrect() or just add stuff here to do. 
-        nextQuestion();
+        setTimeout(nextQuestion, 1000);
+        //nextQuestion();
     }
 }
-//function correct()
-    //show "That is correct!"
-    //show image for answer
-    //call function nextQuestion()
-
-//function incorrect()
-//show "That is incorrect"
-    //show image for answer
-    //call function nextQuestion()
