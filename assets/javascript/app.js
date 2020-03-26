@@ -78,6 +78,7 @@ function nextQuestion() {
         //What else happens at game over
     }
     else{
+        $("#questionResponse").html("");
         timeAmount=10;
         timer();
         $("#question").html((questions[count])["question"]);
