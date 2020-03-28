@@ -70,11 +70,11 @@ function nextQuestion() {
         $("#endGame").show();
         $("#gameHolder").hide();
         if (right >= wrong){
-            $("#resultText").html("Great Job!!")
+            $("#resultText").html("Great Job!!");
         }
-        else (
-            $("#resultText").html("You Suck!!")
-        )
+        else {
+            $("#resultText").html("You Suck!!");
+        }
         //What else happens at game over
     }
     else{
@@ -107,6 +107,7 @@ function buttonClick(button) {
         count++;
         right++;
         $("#questionResponse").html("That is correct!");
+        $("#correctImage").html("<img src = 'assets/images/stark.jpg'>")
         $("#amountCorrect").html(right);
         setTimeout(nextQuestion, 1000);
         //nextQuestion();
