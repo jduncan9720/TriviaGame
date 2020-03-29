@@ -3,7 +3,7 @@ var right = 0;
 var wrong = 0;
 var timeCounter; 
 //Create a variable to hold the time interval once the question begins
-var timeAmount=30; 
+var timeAmount; 
 //Count will keep track of the index of the displayed questions
 var count = 0;
 //Create an array of question objects that hold your trivia questions
@@ -24,7 +24,8 @@ var questions = [{
     "option3": "They catch and kill their food with their feet.",
     "option4": "All of the above.",
     "answer": "option4",
-    "wrongAns": "Wrong! The answer is 'All of the above'."
+    "wrongAns": "Wrong! The answer is 'All of the above'.",
+    "image": src = "assets/images/hawkchasing.jpg"
 
 }, {
     "question": "Which raptor eats live fish almost exclusively (98-99% of its diet) ?",
@@ -33,7 +34,8 @@ var questions = [{
     "option3": "Osprey",
     "option4": "Peregrine Falcon",
     "answer": "option3",
-    "wrongAns": "Wrong! The answer is 'Osprey'."
+    "wrongAns": "Wrong! The answer is 'Osprey'.",
+    "image": src = "assets/images/osprey.jpg"
 }, {
     "question": "What makes up the primary prey of the falcon species ?",
     "option1": "Other Birds",
@@ -41,7 +43,8 @@ var questions = [{
     "option3": "Small Children",
     "option4": "House Cats",
     "answer": "option1",
-    "wrongAns": "Wrong! The answer is 'Other Birds'."
+    "wrongAns": "Wrong! The answer is 'Other Birds'.",
+    "image": src = "assets/images/peregrinechasing.jpg"
 }, {
     "question": "Which raptor species will commonly hunt in packs ?",
     "option1": "Golden Eagles",
@@ -49,7 +52,8 @@ var questions = [{
     "option3": "Gyrfalcons",
     "option4": "Goshawks",
     "answer" : "option2",
-    "wrongAns": "Wrong! The answer is 'Harris Hawks'."
+    "wrongAns": "Wrong! The answer is 'Harris Hawks'.",
+    "image": src = "assets/images/harrishawk.jpg"
 }];
 //Hide gameHolder div so only startButton shows
 $("#gameHolder").hide();
