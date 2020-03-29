@@ -79,18 +79,20 @@ function startGame() {
 function nextQuestion() {
     if(count > questions.length - 1){
         clearInterval(timeCounter);
+        $("#correctImage").attr("src","");
         $("#endGame").show();
         $("#gameHolder").hide();
         if (right >= wrong){
-            $("#resultText").html("Great Job!!");
+            $("#resultText").html("You know your raptors! Great Job!!");
         }
         else {
-            $("#resultText").html("You Suck!!");
+            $("#resultText").html("Raptors are awesome! Study More!!");
         }
         //What else happens at game over
     }
     else{
         $("#questionResponse").html("");
+        $("#correctImage").attr("src","");
         timeAmount=10;
         timer();
         $("#question").html((questions[count])["question"]);
@@ -104,25 +106,36 @@ function nextQuestion() {
 function timer() {
     $("#timeRemaining").html(timeAmount);
     timeAmount--;
-    if (timeAmount == -1) //if it is 0 it will not show 0 on countdown
+    if (timeAmount == 0) 
     {   
-        $("#questionResponse").html("Out of Time");
-        count++;
-        wrong++;
-        setTimeout(nextQuestion, 1000);
+        // $("#questionResponse").html("Out of Time");
+        // count++;
+        // wrong++;
+        // setTimeout(nextQuestion, 1000);
         //nextQuestion();
+        buttonClick("outoftime")
     }
 }
 //When buttons are clicked run this function
 function buttonClick(button) {
     if(button == (questions[count])["answer"]){
+        $("#questionResponse").html("That is correct!");
+        $("#correctImage").attr("src", (questions[count])["image"]);
         count++;
         right++;
-        $("#questionResponse").html("That is correct!");
-        //$("#correctImage").html("<img src = 'assets/images/stark.jpg'>")
         $("#amountCorrect").html(right);
-        setTimeout(nextQuestion, 1000);
+        setTimeout(nextQuestion, 2000);
         //nextQuestion();
+    }
+    else if (button == "outoftime") {
+
+        $("#questionResponse").html("Out of time...." + (questions[count])["wrongAns"]);
+        $("#correctImage").attr("src", (questions[count])["image"]);
+        count++;
+        wrong++;
+        $("#amountIncorrect").html(wrong);
+        setTimeout(nextQuestion, 2000);
+
     }
     else{
         $("#questionResponse").html((questions[count])["wrongAns"]);
@@ -130,7 +143,7 @@ function buttonClick(button) {
         count++;
         wrong++;
         $("#amountIncorrect").html(wrong);
-        setTimeout(nextQuestion, 1000);
+        setTimeout(nextQuestion, 2000);
         //nextQuestion();
     }
 }
