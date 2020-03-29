@@ -10,38 +10,46 @@ var count = 0;
 var questions = [{
     "question": "Which of the following birds is a raptor ?",
     "option1": "Black Capped Chickadee",
-    "option2": "Red-Tailed Hawk",
+    "option2": "Red-Tail Hawk",
     "option3": "Great Blue Heron",
     "option4": "Canada Goose",
-    "answer": "option2"  
+    "answer": "option2",
+    "wrongAns": "Wrong! The answer is 'Red-Tail Hawk'.",
+    "image": src = "assets/images/redtailhawk.jpg"
+
 }, {
     "question": "Which of the following makes raptors unique among birds ?",
     "option1": "They eat meat.",
     "option2": "They have sharp, hooked beaks.",
     "option3": "They catch and kill their food with their feet.",
     "option4": "All of the above.",
-    "answer": "option4"
+    "answer": "option4",
+    "wrongAns": "Wrong! The answer is 'All of the above'."
+
 }, {
     "question": "Which raptor eats live fish almost exclusively (98-99% of its diet) ?",
     "option1": "Bald Eagle",
     "option2": "Harris Hawk",
     "option3": "Osprey",
     "option4": "Peregrine Falcon",
-    "answer": "option3"
+    "answer": "option3",
+    "wrongAns": "Wrong! The answer is 'Osprey'."
 }, {
     "question": "What makes up the primary prey of the falcon species ?",
     "option1": "Other Birds",
     "option2": "Rabbits",
     "option3": "Small Children",
     "option4": "House Cats",
-    "answer": "option1"
+    "answer": "option1",
+    "wrongAns": "Wrong! The answer is 'Other Birds'."
 }, {
     "question": "Which raptor species will commonly hunt in packs ?",
     "option1": "Golden Eagles",
     "option2": "Harris Hawks",
     "option3": "Gyrfalcons",
     "option4": "Goshawks",
-    "answer" : "option2"
+    "answer" : "option2",
+    "wrongAns": "Wrong! The answer is 'Harris Hawks'."
 }];
 //Hide gameHolder div so only startButton shows
 $("#gameHolder").hide();
@@ -92,7 +100,7 @@ function nextQuestion() {
 function timer() {
     $("#timeRemaining").html(timeAmount);
     timeAmount--;
-    if (timeAmount < -1) //if it is 0 it will not show 0 on countdown
+    if (timeAmount == -1) //if it is 0 it will not show 0 on countdown
     {   
         $("#questionResponse").html("Out of Time");
         count++;
@@ -107,15 +115,16 @@ function buttonClick(button) {
         count++;
         right++;
         $("#questionResponse").html("That is correct!");
-        $("#correctImage").html("<img src = 'assets/images/stark.jpg'>")
+        //$("#correctImage").html("<img src = 'assets/images/stark.jpg'>")
         $("#amountCorrect").html(right);
         setTimeout(nextQuestion, 1000);
         //nextQuestion();
     }
     else{
+        $("#questionResponse").html((questions[count])["wrongAns"]);
+        $("#correctImage").attr("src", (questions[count])["image"]);
         count++;
         wrong++;
-        $("#questionResponse").html("That is incorrect!");
         $("#amountIncorrect").html(wrong);
         setTimeout(nextQuestion, 1000);
         //nextQuestion();
