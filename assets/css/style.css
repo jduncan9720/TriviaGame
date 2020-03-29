@@ -1,3 +1,23 @@
+body{
+    background-image: url("../images/falconback.png");
+}
 h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
+    font-size: 35px;
+}
+h1 {
+    font-family: 'Fondamento', cursive;
+    font-size: 80px;
+}
+.btn {
+    padding: 10px 40px 10px 40px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#gameHolder {
+    background-color: rgba(245,245,245,0.8);
+}
+#endGame {
+    background-color: rgba(245,245,245,0.8);
 }

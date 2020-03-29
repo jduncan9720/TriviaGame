@@ -8,40 +8,40 @@ var timeAmount=30;
 var count = 0;
 //Create an array of question objects that hold your trivia questions
 var questions = [{
-    "question": "What does the 'J' stand for in David J. Matthews ?",
-    "option1": "Jeff",
-    "option2": "John",
-    "option3": "Jerry",
-    "option4": "Jack",
+    "question": "Which of the following birds is a raptor ?",
+    "option1": "Black Capped Chickadee",
+    "option2": "Red-Tailed Hawk",
+    "option3": "Great Blue Heron",
+    "option4": "Canada Goose",
     "answer": "option2"  
 }, {
-    "question": "What is the name of Dave Matthews Band's drummer ?",
-    "option1": "Carter Beauford",
-    "option2": "Carter Banks",
-    "option3": "Banks Carter",
-    "option4": "Joe Carter",
-    "answer": "option1"
-}, {
-    "question": "What is the name of Dave Matthews Band's FIRST recorded album ?",
-    "option1": "Two Step",
-    "option2": "Remember Two Things",
-    "option3": "Crash",
-    "option4": "Away From the World",
-    "answer": "option2"
-}, {
-    "question": "Who is the Dave Matthews Band's saxophonist who died tragically in 2008 ?",
-    "option1": "Stefan Lessard",
-    "option2": "Jeff Coffin",
-    "option3": "Leroi Moore",
-    "option4": "Boyd Tinsley",
+    "question": "Which of the following makes raptors unique among birds ?",
+    "option1": "They eat meat.",
+    "option2": "They have sharp, hooked beaks.",
+    "option3": "They catch and kill their food with their feet.",
+    "option4": "All of the above.",
     "answer": "option4"
 }, {
-    "question": "In what country was Dave Matthews born ?",
-    "option1": "United States",
-    "option2": "England",
-    "option3": "Australia",
-    "option4": "South Africa",
-    "answer" : "option4"
+    "question": "Which raptor eats live fish almost exclusively (98-99% of its diet) ?",
+    "option1": "Bald Eagle",
+    "option2": "Harris Hawk",
+    "option3": "Osprey",
+    "option4": "Peregrine Falcon",
+    "answer": "option3"
+}, {
+    "question": "What makes up the primary prey of the falcon species ?",
+    "option1": "Other Birds",
+    "option2": "Rabbits",
+    "option3": "Small Children",
+    "option4": "House Cats",
+    "answer": "option1"
+}, {
+    "question": "Which raptor species will commonly hunt in packs ?",
+    "option1": "Golden Eagles",
+    "option2": "Harris Hawks",
+    "option3": "Gyrfalcons",
+    "option4": "Goshawks",
+    "answer" : "option2"
 }];
 //Hide gameHolder div so only startButton shows
 $("#gameHolder").hide();

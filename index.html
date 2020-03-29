@@ -8,28 +8,31 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@1&display=swap" rel="stylesheet">
     <title>Trivia Game</title>
   </head>
   <body>
     <div class="container-fluid text-center">
-      <h1>Timed Trivia!!</h1>
-      <div class="container border">
+      <br>
+      <h1>Raptor Trivia!!</h1>
+      <div class="container">
             <div id="startDiv">
               <div id = buttonDiv class = "text-center">
-                <button type = "button" class = "btn btn-info text-center" id = "startButton">Start</button>
+                <button type = "button" class = "btn border-dark bg-white text-center" id = "startButton">Start</button>
             </div>
             </div>
-            <div id="gameHolder">
+            <div class="container" id="gameHolder">
               <h3>Time Remaining: <span id="timeRemaining"></span></h3>
               <h3 id="question"></h3>
-              <button type = "button" class = "btn btn-info text-center" id = "answer1"></button><br>
-              <button type = "button" class = "btn btn-info text-center" id = "answer2"></button><br>
-              <button type = "button" class = "btn btn-info text-center" id = "answer3"></button><br>
-              <button type = "button" class = "btn btn-info text-center" id = "answer4"></button><br>
+              <br>
+              <button type = "button" class = "btn border-dark bg-white text-center" id = "answer1"></button><br><br>
+              <button type = "button" class = "btn border-dark bg-white text-center" id = "answer2"></button><br><br>
+              <button type = "button" class = "btn border-dark bg-white text-center" id = "answer3"></button><br><br>
+              <button type = "button" class = "btn border-dark bg-white text-center" id = "answer4"></button><br><br>
               <h3 id="questionResponse"></h3>
               <div id="correctImage"></div>
             </div>
-            <div id="endGame">
+            <div class="container" id="endGame">
               <h3>Questions Correct: <span id="amountCorrect">0</span></h3><br>
               <h3>Questions Incorrect: <span id="amountIncorrect">0</span></h3><br>
               <h2 id="resultText"></h2>
